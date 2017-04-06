@@ -1,5 +1,5 @@
 //
-//  EOCClass.h
+//  FRWZombieDemo.h
 //  NSZombieDemo
 //
 //  Created by freewaying on 2017/3/30.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface EOCClass : NSObject
+@interface FRWZombieDemo : NSObject
 
 + (void)printClassInfo:(id)obj;
 

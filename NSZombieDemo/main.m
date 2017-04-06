@@ -7,13 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "EOCClass.h"
+#import "FRWZombieDemo.h"
+#import "FRWMessageDispatchDemo.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         /* demonstrate the existense of NSZoombie class
          */
-        [EOCClass demostrateZombie];
+        [FRWZombieDemo demostrateZombie];
+        
+        /* demonstrate message-dispatch system
+         FRWMessageDispatchDemo *md = [[FRWMessageDispatchDemo alloc] init];
+         [md test];
+         */
     }
     return 0;
 }

@@ -1,16 +1,16 @@
 //
-//  EOCClass.m
+//  FRWZombieDemo.m
 //  NSZombieDemo
 //
 //  Created by freewaying on 2017/3/30.
 //  Copyright © 2017年 gmail.freewaying. All rights reserved.
 //
 
-#import "EOCClass.h"
+#import "FRWZombieDemo.h"
 #import <objc/runtime.h>
 #import "NSObject+Zombie.h"
 
-@implementation EOCClass
+@implementation FRWZombieDemo
 
 + (void)printClassInfo:(id)obj {
     Class cls = object_getClass(obj);
@@ -20,12 +20,12 @@
 
 /** demonstrate the existense NSZoombie class */
 + (void)demostrateZombie {
-    EOCClass *obj = [[EOCClass alloc] init];
+    FRWZombieDemo *obj = [[FRWZombieDemo alloc] init];
     NSLog(@"Before release:");
-    [EOCClass printClassInfo:obj];
+    [FRWZombieDemo printClassInfo:obj];
     [obj release];
     NSLog(@"After release:");
-    [EOCClass printClassInfo:obj];
+    [FRWZombieDemo printClassInfo:obj];
     
     NSLog(@"%@", [obj description]);
 }

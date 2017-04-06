@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		9976F42D1E8E32DB005037CD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9976F42C1E8E32DB005037CD /* main.m */; };
 		9976F43A1E8E331A005037CD /* _FRWZombie_.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9976F4351E8E331A005037CD /* _FRWZombie_.mm */; };
-		9976F43B1E8E331A005037CD /* EOCClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9976F4371E8E331A005037CD /* EOCClass.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9976F43B1E8E331A005037CD /* FRWZombieDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9976F4371E8E331A005037CD /* FRWZombieDemo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9976F43C1E8E331A005037CD /* NSObject+Zombie.m in Sources */ = {isa = PBXBuildFile; fileRef = 9976F4391E8E331A005037CD /* NSObject+Zombie.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9976F4401E8E4072005037CD /* FRWMessageDispatchDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9976F43F1E8E4072005037CD /* FRWMessageDispatchDemo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,10 +31,12 @@
 		9976F42C1E8E32DB005037CD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9976F4341E8E331A005037CD /* _FRWZombie_.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _FRWZombie_.h; sourceTree = "<group>"; };
 		9976F4351E8E331A005037CD /* _FRWZombie_.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = _FRWZombie_.mm; sourceTree = "<group>"; };
-		9976F4361E8E331A005037CD /* EOCClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EOCClass.h; sourceTree = "<group>"; };
-		9976F4371E8E331A005037CD /* EOCClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EOCClass.m; sourceTree = "<group>"; };
+		9976F4361E8E331A005037CD /* FRWZombieDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRWZombieDemo.h; sourceTree = "<group>"; };
+		9976F4371E8E331A005037CD /* FRWZombieDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRWZombieDemo.m; sourceTree = "<group>"; };
 		9976F4381E8E331A005037CD /* NSObject+Zombie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Zombie.h"; sourceTree = "<group>"; };
 		9976F4391E8E331A005037CD /* NSObject+Zombie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Zombie.m"; sourceTree = "<group>"; };
+		9976F43E1E8E4072005037CD /* FRWMessageDispatchDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRWMessageDispatchDemo.h; sourceTree = "<group>"; };
+		9976F43F1E8E4072005037CD /* FRWMessageDispatchDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRWMessageDispatchDemo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,10 +80,12 @@
 			children = (
 				9976F4341E8E331A005037CD /* _FRWZombie_.h */,
 				9976F4351E8E331A005037CD /* _FRWZombie_.mm */,
-				9976F4361E8E331A005037CD /* EOCClass.h */,
-				9976F4371E8E331A005037CD /* EOCClass.m */,
+				9976F4361E8E331A005037CD /* FRWZombieDemo.h */,
+				9976F4371E8E331A005037CD /* FRWZombieDemo.m */,
 				9976F4381E8E331A005037CD /* NSObject+Zombie.h */,
 				9976F4391E8E331A005037CD /* NSObject+Zombie.m */,
+				9976F43E1E8E4072005037CD /* FRWMessageDispatchDemo.h */,
+				9976F43F1E8E4072005037CD /* FRWMessageDispatchDemo.m */,
 			);
 			path = "NSObject+Zombie";
 			sourceTree = "<group>";
@@ -145,7 +150,8 @@
 				9976F42D1E8E32DB005037CD /* main.m in Sources */,
 				9976F43C1E8E331A005037CD /* NSObject+Zombie.m in Sources */,
 				9976F43A1E8E331A005037CD /* _FRWZombie_.mm in Sources */,
-				9976F43B1E8E331A005037CD /* EOCClass.m in Sources */,
+				9976F43B1E8E331A005037CD /* FRWZombieDemo.m in Sources */,
+				9976F4401E8E4072005037CD /* FRWMessageDispatchDemo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +250,11 @@
 		9976F4311E8E32DB005037CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					"FRWZombieEnabed=1",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -251,6 +262,7 @@
 		9976F4321E8E32DB005037CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = "FRWZombieEnabed=1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -274,6 +286,7 @@
 				9976F4321E8E32DB005037CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

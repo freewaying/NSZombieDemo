@@ -14,9 +14,11 @@
 @implementation NSObject (Zombie)
 
 + (void)load {
+#if FRWZombieEnabed
     Method m1 = class_getInstanceMethod([self class], @selector(dealloc));
     Method m2 = class_getInstanceMethod([self class], @selector(zoombie_dealloc));
     method_exchangeImplementations(m1, m2);
+#endif
 }
 
 - (void)zoombie_dealloc {

@@ -57,10 +57,11 @@ IMP object_getMethodImplementation(id obj, SEL name)
 - (void)doesNotRecognizeSelector:(SEL)sel {
     // check obj is kind of Zoombie object
     const char *clsName = object_getClassName(self);
-    if ([[NSString stringWithUTF8String:clsName] hasPrefix:[NSString stringWithUTF8String:kZombieClsNamePrefix]] && [NSString stringWithUTF8String:clsName].length > [NSString stringWithUTF8String:kZombieClsNamePrefix].length) {
+    size_t n = strlen(kZombieClsNamePrefix);
+    if (strncmp(clsName, kZombieClsNamePrefix, n) == 0) {
         // print class and message info about deallocated object
         const char *selName = sel_getName(sel);
-        const char *originClsName = [[[NSString stringWithUTF8String:clsName] substringFromIndex:[NSString stringWithUTF8String:kZombieClsNamePrefix].length] cStringUsingEncoding:NSUTF8StringEncoding];
+        const char *originClsName = clsName + n;;
         NSLog(@"*** -[%s %s]: sent to deallocated instance %p", originClsName, selName, self);
         return;
     }
